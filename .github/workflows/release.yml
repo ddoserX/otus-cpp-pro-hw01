@@ -1,40 +1,51 @@
-name: 'C++ CI'
+name: C++ CI
 
-on:
-  push:
-    branches:
-      - master
-      - feature/github_actions
+on: push
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true
-      - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
-      - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DWITH_BOOST_TEST=ON
-      - run: cmake --build .
-      - run: cmake --build . --target test
-      - run: cmake --build . --target package
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.run_number }}
-          release_name: Release ${{ github.run_number }}
-          draft: false
-          prerelease: false
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./helloworld-0.0.${{ github.run_number }}-Linux.deb
-          asset_name: helloworld-0.0.${{ github.run_number }}-Linux.deb
-          asset_content_type: application/vnd.debian.binary-package
+    build-deb:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+              with: 
+                submodules: true
+              
+            - name: Install deps and configure env
+              run: |
+                sudo apt update && sudo apt install git ninja-build g++ cmake -y
+                git clone https://github.com/microsoft/vcpkg.git && cd ./vcpkg
+                sudo ./bootstrap-vcpkg.sh -disableMetrics
+                sudo ./vcpkg integrate install
+              
+            - name: Build using CMake
+              run: | 
+                export VCPKG_ROOT=$PWD/vcpkg
+                ./vcpkg/vcpkg install
+                cmake
+                cmake -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja -DCMAKE_CXX_COMPILER=/usr/bin/g++ \
+                  -DPATCH_VERSION=${{ github.run_number }} \
+                  --preset=vcpkg-release -S . -B build
+                cmake --build build --target all
+                cmake --build build --target package
+            
+            - name: Create release
+              id: create-release
+              uses: actions/create-release@v1
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                tag_name: 0.0.${{ github.run_number}}
+                release_name: ip-filter-0.0.${{ github.run_number }}
+                draft: false
+              
+            - name: Upload DEB release
+              id: upload-deb-release
+              uses: actions/upload-release-asset@v1
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                upload_url: ${{ steps.create-release.outputs.upload_url }}
+                asset_path: ./build/ip-filter-0.0.${{ github.run_number }}-Linux.deb
+                asset_name: ip-filter-0.0.${{ github.run_number }}-Linux.deb
+                asset_content_type: application/vnd.debian.binary-package
