@@ -25,7 +25,7 @@ jobs:
                 cmake
                 cmake -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja -DCMAKE_CXX_COMPILER=/usr/bin/g++ \
                   -DPATCH_VERSION=${{ github.run_number }} \
-                  --preset=release -S . -B build
+                  --preset=vcpkg-release -S . -B build
                 cmake --build build --target ip-filter
                 cmake --build build --target package
             

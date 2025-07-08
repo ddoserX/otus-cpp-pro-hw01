@@ -27,3 +27,9 @@ target_compile_options(${APP} PUBLIC
 if(CMAKE_BUILD_TYPE STREQUAL "Release")
     target_compile_options(${APP} PUBLIC -Oz)
 endif()
+
+set(CPACK_GENERATOR DEB)
+set(CMAKE_PACKAGE_NAME ${CMAKE_PROJECT_NAME})
+set(CPACK_PACKAGE_VERSION ${CMAKE_PROJECT_VERSION})
+set(CPACK_PACKAGE_CONTACT "example@example.com")
+include(CPack)

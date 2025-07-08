@@ -2,7 +2,7 @@
     "version": 8,
     "configurePresets": [
         {
-            "name": "debug",
+            "name": "vcpkg-debug",
             "displayName": "vcpkg-debug",
             "description": "Sets Ninja generator, build and install directory",
             "generator": "Ninja",
@@ -13,7 +13,7 @@
             }
         },
         {
-            "name": "release",
+            "name": "vcpkg-release",
             "displayName": "vcpkg-release",
             "description": "Sets Ninja generator, build and install directory",
             "generator": "Ninja",
@@ -27,7 +27,7 @@
     "packagePresets": [
         {
             "name": "DEB",
-            "configurePreset": "release",
+            "configurePreset": "vcpkg-release",
             "generators": [
                 "DEB"
             ]
