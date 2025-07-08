@@ -27,7 +27,6 @@ int main()
 {
 	try {
 		std::vector<ipv4_addr> ip_pool;
-		std::vector<uint32_t> ip_int;
 
 		for (std::string line; std::getline(std::cin, line);) {
 			std::vector<std::string> v = split(line, '\t');
