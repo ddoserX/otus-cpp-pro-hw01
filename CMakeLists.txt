@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.25)
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
-project(user-allocator LANGUAGES CXX VERSION ${PROJECT_VERSION})
+project(allocator LANGUAGES CXX VERSION ${PROJECT_VERSION})
 
-set(APP user-allocator)
+set(APP allocator)
 set(SRC ./src/allocator.cpp)
 
 list(APPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg_installed/x64-linux)

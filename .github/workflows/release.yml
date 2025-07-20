@@ -26,7 +26,7 @@ jobs:
                 cmake -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja -DCMAKE_CXX_COMPILER=/usr/bin/g++ \
                   -DPATCH_VERSION=${{ github.run_number }} \
                   --preset=vcpkg-release -S . -B build
-                cmake --build build --target ip-filter
+                cmake --build build --target allocator
                 cmake --build build --target package
             
             - name: Create release
@@ -36,7 +36,7 @@ jobs:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                 tag_name: 0.0.${{ github.run_number}}
-                release_name: ip-filter-0.0.${{ github.run_number }}
+                release_name: allocator-0.0.${{ github.run_number }}
                 draft: false
               
             - name: Upload DEB release
@@ -46,6 +46,6 @@ jobs:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                 upload_url: ${{ steps.create-release.outputs.upload_url }}
-                asset_path: ./build/ip-filter-0.0.${{ github.run_number }}-Linux.deb
-                asset_name: ip-filter-0.0.${{ github.run_number }}-Linux.deb
+                asset_path: ./build/allocator-0.0.${{ github.run_number }}-Linux.deb
+                asset_name: allocator-0.0.${{ github.run_number }}-Linux.deb
                 asset_content_type: application/vnd.debian.binary-package
