@@ -1,48 +1,23 @@
 #include <iostream>
+#include <vector>
 #include <list>
 #include <tuple>
-#include <vector>
-#include <type_traits>
 
-template <typename T, typename = void>
-struct is_iterable : std::false_type {
-};
+#include "print_ip.hpp"
 
-template <typename T>
-struct is_iterable<T, std::void_t<decltype(std::declval<T>().begin())>> : std::true_type {
-};
 
-template <typename T, typename = void>
-void print_ip(T data)
-{
-	std::cout << data << std::endl;
-}
-
-template <typename T, typename std::enable_if<is_iterable<T>::value>::type>
-void print_ip(T data)
-{
-	for (const auto& el : data) {
-		std::cout << el << '.';
-	}
-
-	std::cout << std::endl;
-}
 
 int main()
 {
-	// std::vector<int> vec = {1,2,3,4};
-	// std::list<int> lis {};
-	// std::array<int,3> arr = {1,2,3};
-
-	// std::cout << is_iterable<std::string>::value << std::endl;
-
-	std::string str = "abcdifj";
-	int x = -1;
-	std::vector<int> vec = {1, 2, 3, 4};
-
-	print_ip(x);
-	print_ip(str);
-	print_ip(vec);
+	print_ip(-1);
+	print_ip(0);
+	print_ip(0.0);
+	print_ip(2130706433);
+	print_ip(8875824491850138409);
+	print_ip(std::vector<int>{192,168,0,1});
+	print_ip(std::list<short>{192,168,0,2});
+	print_ip(std::string("Hello world!"));
+	print_ip(std::make_tuple(172,16,0,1));
 
 	return 0;
 }
