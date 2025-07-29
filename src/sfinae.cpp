@@ -1,11 +1,14 @@
+/**
+ * @file main.cpp 
+ * @brief Точка входа в программу.
+ */
+
 #include <iostream>
 #include <vector>
 #include <list>
 #include <tuple>
 
 #include "print_ip.hpp"
-
-
 
 int main()
 {

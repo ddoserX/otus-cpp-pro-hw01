@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.25)
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
-project(sfinae LANGUAGES CXX VERSION ${PROJECT_VERSION})
+project(print_ip LANGUAGES CXX VERSION ${PROJECT_VERSION})
 
-set(APP sfinae)
+set(APP print_ip)
 set(SRC ./src/sfinae.cpp)
 
 list(APPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg_installed/x64-linux)
