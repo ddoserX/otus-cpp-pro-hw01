@@ -15,7 +15,7 @@ jobs:
           - name: Doxygen action
             uses: mattnotmitt/doxygen-action@v1.1.0
             with:
-                doxyfile-path: ./Doxygen
+                doxyfile-path: ./Doxyfile
                 workong-directory: .
           
           - name: Github Pages deployment
