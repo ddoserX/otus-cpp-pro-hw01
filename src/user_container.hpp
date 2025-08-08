@@ -18,12 +18,16 @@ class UserContainer
 	allocator_type m_allocator;
 
     public:
-	explicit UserContainer(const allocator_type& alloc = allocator_type())
-	    : m_data{nullptr}, m_size{0}, m_capacity{0}, m_allocator{alloc}
+	explicit UserContainer(allocator_type alloc = allocator_type())
+	    : m_data{nullptr}, m_size{0}, m_capacity{0}, m_allocator{std::move(alloc)}
 	{
 	}
 
-	UserContainer(const UserContainer& rhs) : UserContainer(rhs.m_allocator)
+	UserContainer(const UserContainer& rhs)
+	    : m_data{nullptr},
+	      m_size{0},
+	      m_capacity{0},
+	      m_allocator(allocator_traits::select_on_container_copy_construction(rhs.m_allocator))
 	{
 		if (rhs.m_size > 0) {
 			reserve(rhs.m_size);
@@ -128,19 +132,4 @@ class UserContainer
 		m_data = new_data;
 		m_capacity = new_capacity;
 	}
-
-	// void resize(size_t count)
-	// {
-	// 	if (count < m_size) {
-	// 		for (size_t i = count; i < m_size; ++i) {
-	// 			allocator_traits::deallocate(m_allocator, m_data + i, sizeof(value_type));
-	// 		}
-	// 	} else if (count > m_size) {
-	// 		for (size_t i = m_size; i < count; ++i) {
-	// 			allocator_traits::allocate(m_allocator, m_data + i, sizeof(value_type));
-	// 		}
-	// 	}
-
-	// 	m_capacity = m_size = count;
-	// }
 };

@@ -8,7 +8,7 @@ int main()
 {
 	std::cout << "Hello allocator\n";
 
-	UserContainer<int, UserAllocator<int>> container;
+	UserContainer<int, PoolAllocator<int>> container;
 
 	container.reserve(2);
 	container.push_back(1);
