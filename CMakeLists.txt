@@ -3,16 +3,14 @@ cmake_minimum_required(VERSION 3.25)
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
-project(v-editor LANGUAGES CXX VERSION ${PROJECT_VERSION})
+project(allocator LANGUAGES CXX VERSION ${PROJECT_VERSION})
 
-set(APP v-editor)
-set(SRC ./src/main.cpp)
+set(APP allocator)
+set(SRC ./src/allocator.cpp)
 
 list(APPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg_installed/x64-linux)
 
 add_executable(${APP} ${SRC})
-
-include_directories(src/shapes)
 
 target_compile_features(${APP} PUBLIC cxx_std_23)
 target_compile_options(${APP} PUBLIC

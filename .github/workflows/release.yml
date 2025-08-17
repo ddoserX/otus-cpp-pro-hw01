@@ -3,8 +3,8 @@ name: C++ CI
 on: push
 
 env:
-  PROJECT_NAME: "v-editor"
-  APP_NAME: "v-editor"
+  PROJECT_NAME: "allocator"
+  APP_NAME: "allocator"
 
 jobs:
     build-documentation:
