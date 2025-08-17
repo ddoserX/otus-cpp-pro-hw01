@@ -1,0 +1,15 @@
+<map id="src/view.hpp" name="src/view.hpp">
+<area shape="rect" id="Node000001" title="Представление (View), отвечающее за отображение данных." alt="" coords="116,5,210,31"/>
+<area shape="rect" id="Node000002" href="$document_8hpp.html" title="Model, хранящая коллекцию примитивов." alt="" coords="112,79,214,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,31,166,63,160,63,160,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,73,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="143,108,74,147,72,142,141,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="96,153,150,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="159,106,139,140,135,138,154,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="174,153,232,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="172,104,191,138,187,140,167,106"/>
+<area shape="rect" id="Node000006" href="$baseShape_8hpp.html" title="Реализация чистого базового класса фигуры." alt="" coords="256,153,366,178"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="189,103,273,143,271,148,187,108"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="275,226,347,252"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="314,179,314,211,308,211,308,179"/>
+</map>

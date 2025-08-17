@@ -1,0 +1,16 @@
+<map id="src/shapes/baseShape.hpp" name="src/shapes/baseShape.hpp">
+<area shape="rect" id="Node000001" title="Реализация чистого базового класса фигуры." alt="" coords="113,5,291,31"/>
+<area shape="rect" id="Node000002" href="$document_8hpp.html" title="Model, хранящая коллекцию примитивов." alt="" coords="7,79,131,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,41,93,81,90,76,165,36"/>
+<area shape="rect" id="Node000005" href="$circle_8hpp.html" title="Реализация фигуры Circle." alt="" coords="141,153,285,178"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="207,46,215,152,209,152,202,47"/>
+<area shape="rect" id="Node000006" href="$rectangle_8hpp.html" title="Реализация фигуры Rectangle." alt="" coords="239,79,405,105"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="237,37,303,76,300,81,234,42"/>
+<area shape="rect" id="Node000003" href="$controller_8hpp.html" title="Контроллер &#45; связывающий View и Document (model)." alt="" coords="81,226,201,252"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="40,116,25,130,13,146,8,161,13,177,26,193,43,206,82,223,79,228,40,210,22,197,8,180,3,161,9,143,21,127,37,112"/>
+<area shape="rect" id="Node000004" href="$view_8hpp.html" title="Представление (View), отвечающее за отображение данных." alt="" coords="22,153,116,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="72,120,72,152,66,152,66,120"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="93,187,131,224,127,228,90,191"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="192,191,155,228,151,224,188,187"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="323,121,316,151,299,180,278,198,253,213,202,231,201,226,251,208,275,194,295,177,311,149,318,120"/>
+</map>

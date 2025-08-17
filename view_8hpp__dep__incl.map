@@ -1,0 +1,5 @@
+<map id="src/view.hpp" name="src/view.hpp">
+<area shape="rect" id="Node000001" title="Представление (View), отвечающее за отображение данных." alt="" coords="18,5,113,31"/>
+<area shape="rect" id="Node000002" href="$controller_8hpp.html" title="Контроллер &#45; связывающий View и Document (model)." alt="" coords="5,79,126,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,46,68,79,63,79,63,46"/>
+</map>

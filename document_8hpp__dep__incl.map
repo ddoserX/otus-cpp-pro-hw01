@@ -1,0 +1,8 @@
+<map id="src/document.hpp" name="src/document.hpp">
+<area shape="rect" id="Node000001" title="Model, хранящая коллекцию примитивов." alt="" coords="5,5,130,31"/>
+<area shape="rect" id="Node000002" href="$controller_8hpp.html" title="Контроллер &#45; связывающий View и Document (model)." alt="" coords="7,153,128,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,46,55,74,54,104,66,151,61,153,49,105,49,74,56,45"/>
+<area shape="rect" id="Node000003" href="$view_8hpp.html" title="Представление (View), отвечающее за отображение данных." alt="" coords="63,79,157,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="85,43,105,77,101,80,80,46"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="98,119,77,154,72,151,93,116"/>
+</map>
